@@ -21,18 +21,7 @@ def insert_data_to_MITREATTACK_Tables():
     try:
         with sqlite3.connect(DATABASE) as connection:
             cursor = connection.cursor()
-            cursor.executescript('''
-                drop table if exists ExternalReferences;
-                drop table if exists TechniqueCWEMapping;
-                drop table if exists TechniqueMitigationMapping;
-                drop table if exists TechniqueKillChain;
-                drop table if exists TechniquePlatforms;
-                drop table if exists TechniquePermissions;
-                drop table if exists TechniqueDataSources;
-                drop table if exists TechniqueDefensesBypassed;
-                drop table if exists DomainTechniqueMapping;
-                drop table if exists Attack_technique;
-            ''')
+            logging.info("✅ Connection to SQLite DB successful")
             create_table(connection)
             for attack_data in attack_files:
                 for obj in attack_data["objects"]:
@@ -147,4 +136,3 @@ def insert_data_to_MITREATTACK_Tables():
         logging.error(f"Error: {e}")
     finally:
         connection.close()
-insert_data_to_MITREATTACK_Tables()
