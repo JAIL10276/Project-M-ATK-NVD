@@ -1,0 +1,28 @@
+[Tue 04/22/2025 19:59:34 95] Starting update 
+Updating 7eb3ca5..8ea3ed6
+Fast-forward
+ CHANGELOG.md                                  |      4 +
+ LICENSE.txt                                   |      2 +-
+ enterprise-attack/enterprise-attack-17.0.json | 716556 ++++++++++++++++++
+ enterprise-attack/enterprise-attack.json      | 912905 ++++++++++-------------
+ ics-attack/ics-attack-17.0.json               |  48492 ++
+ ics-attack/ics-attack.json                    |  36429 +-
+ index.json                                    |     17 +-
+ index.md                                      |     63 +-
+ mobile-attack/mobile-attack-17.0.json         |  68286 ++
+ mobile-attack/mobile-attack.json              |  93012 +--
+ util/generate-collection-index.py             |      5 +-
+ 11 files changed, 1296483 insertions(+), 579288 deletions(-)
+ create mode 100644 enterprise-attack/enterprise-attack-17.0.json
+ create mode 100644 ics-attack/ics-attack-17.0.json
+ create mode 100644 mobile-attack/mobile-attack-17.0.json
+[Tue 04/22/2025 19:59:34 95] Update successful. 
+[Tue 04/22/2025 20:01:47 11] Starting update 
+Already up to date.
+[Tue 04/22/2025 20:01:47 11] Update successful. 
+[Tue 04/22/2025 20:02:14 23] Starting update 
+Already up to date.
+[Tue 04/22/2025 20:02:14 23] Update successful. 
+[Tue 04/22/2025 20:05:43.94] Starting update 
+Already up to date.
+[Tue 04/22/2025 20:05:43.94] ✅ Update successful! 

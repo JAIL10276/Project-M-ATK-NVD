@@ -1,0 +1,22 @@
+2025-04-23 08:42:26,775 - ERROR - Error: Cursor.executescript() takes exactly one argument (2 given)
+2025-04-23 08:44:12,670 - ERROR - SQLite error: duplicate column name: external_id
+2025-04-23 08:44:49,723 - ERROR - Error: Incorrect number of bindings supplied. The current statement uses 1, and there are 9 supplied.
+2025-04-23 08:47:19,228 - INFO - \u2705 MITRE ATT&CK data inserted successfully.
+2025-04-23 09:18:47,450 - ERROR - SQLite error: near "drop": syntax error
+2025-04-23 09:21:00,974 - INFO - \u2705 Tables created successfully!
+2025-04-23 09:21:00,976 - ERROR - SQLite error: near "foreign": syntax error
+2025-04-23 09:24:35,855 - INFO - \u2705 Tables created successfully!
+2025-04-23 09:24:35,856 - ERROR - SQLite error: near "technique_ID": syntax error
+2025-04-23 09:26:18,036 - INFO - \u2705 Tables created successfully!
+2025-04-23 09:26:18,038 - ERROR - SQLite error: near "technique_ID": syntax error
+2025-04-23 09:27:59,990 - INFO - \u2705 Tables created successfully!
+2025-04-23 09:27:59,992 - ERROR - SQLite error: near "technique_ID": syntax error
+2025-04-23 09:28:18,912 - ERROR - SQLite error: table "ExternalReferences" has more than one primary key
+2025-04-23 09:31:15,631 - ERROR - SQLite error: table "ExternalReferences" has more than one primary key
+2025-04-23 09:31:50,515 - ERROR - SQLite error: table "ExternalReferences" has more than one primary key
+2025-04-23 09:33:47,699 - ERROR - SQLite error: table "ExternalReferences" has more than one primary key
+2025-04-23 09:34:58,143 - ERROR - SQLite error: table "ExternalReferences" has more than one primary key
+2025-04-23 09:36:30,337 - INFO - \u2705 Tables created successfully!
+2025-04-23 09:36:30,346 - ERROR - SQLite error: table ExternalReferences has no column named CVD_ID
+2025-04-23 09:37:08,818 - INFO - \u2705 Tables created successfully!
+2025-04-23 09:37:08,897 - INFO - \u2705 MITRE ATT&CK data inserted successfully.
