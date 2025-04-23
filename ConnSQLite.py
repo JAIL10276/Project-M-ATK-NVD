@@ -1,14 +1,18 @@
 import sqlite3
+import logging
+from logger import setup_logger
+setup_logger()
+
 def create_database():
     try:
-        with sqlite3.connect("WHITEHAT.db") as connection:
-            print("✅ Connection to SQLite DB successful")
-            print("🔃 Creating tables...")
+        with sqlite3.connect("project-src/database/WHITEHAT.db") as connection:
+            logging.info("✅ Connection to SQLite DB successful")
+            logging.info("🔃 Creating tables...")
             create_table(connection)
             connection.commit()
-            print("✅ Database created successfully")
+            logging.info("✅ Database created successfully")
     except sqlite3.OperationalError as e:
-        print(f"SQLite error: {e}")
+        logging.error(f"SQLite error: {e}")
 
 def create_table(connection):
     cursor = connection.cursor()
@@ -135,13 +139,16 @@ def create_table(connection):
         );
 
         -- ExternalReferences
-        CREATE TABLE IF NOT EXISTS ExternalReferences (
+        create table if not exists ExternalReferences (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
+            CVE_ID TEXT,
+            external_id TEXT,
             technique_ID TEXT,
             source TEXT,
             url TEXT,
             description TEXT,
-            FOREIGN KEY (technique_ID) REFERENCES Attack_technique(technique_ID)
+            FOREIGN key (technique_ID) references Attack_technique(technique_ID),
+            FOREIGN KEY (CVE_ID) REFERENCES CVE(CVE_ID)
         );
 
         -- TechniqueCWEMapping
@@ -208,4 +215,4 @@ def create_table(connection):
             FOREIGN KEY (technique_ID) REFERENCES Attack_technique(technique_ID)
         );
     ''')
-    print("✅ Tables created successfully!")
+    logging.info("✅ Tables created successfully!")

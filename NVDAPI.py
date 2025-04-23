@@ -1,15 +1,32 @@
 import requests
 import time
 import sqlite3
+import os
+from datetime import datetime, timedelta, timezone
+import logging
+# Set up logging configuration
+from logger import setup_logger
+setup_logger()
 
+# Function to get the last update timestamp from a file
+def get_last_update(filename="last-sync.txt"):
+    if os.path.exists(filename):
+        with open(filename, "r") as file:
+            return file.read().strip()
+    return None
 # Configuration
 NVDAPIURL = "https://services.nvd.nist.gov/rest/json/cves/2.0"
-DATABASE = "WHITEHAT.db"
+DATABASE = "project-src/database/WHITEHAT.db"
 NVDAPIKEY = 'b7f081ac-7ba8-482d-9c11-80aa51c5f666'  # Replace with your actual API key
 # Note: The API key should be kept secret and not hardcoded in production code.
 HEADERS = {"apiKey": NVDAPIKEY}
 RESULTS_PER_PAGE = 2000
+LASTMOD_START_DATE = get_last_update("last-sync.txt") or (datetime.now(timezone.utc) - timedelta(days=1)).strftime("%Y-%m-%dT%H:%M:%S.000Z")
+
+# Importing the ChunkedEncodingError exception for handling chunked responses
 from requests.exceptions import ChunkedEncodingError
+
+# Function to handle requests with retries
 def safe_request(url, headers, params, retries=5, delay=10):
     for attempt in range(retries):
         try:
@@ -17,13 +34,14 @@ def safe_request(url, headers, params, retries=5, delay=10):
             response.raise_for_status()
             return response
         except ChunkedEncodingError:
-            print(f"⚠️ ChunkedEncodingError, retrying in {delay} seconds... (attempt {attempt + 1})")
+            logging.error(f"⚠️ ChunkedEncodingError, retrying in {delay} seconds... (attempt {attempt + 1})")
             time.sleep(delay)
         except requests.RequestException as e:
-            print(f"⚠️ Other Request Error: {e}")
+            logging.error(f"⚠️ Other Request Error: {e}")
             time.sleep(delay)
     raise Exception("❌ Failed to fetch after retries")
 
+# Function to insert data into NVD tables
 def insert_data_to_NVD_Tables():
     start_time = time.time()
     start_index = 0
@@ -31,32 +49,33 @@ def insert_data_to_NVD_Tables():
 
     try:
         with sqlite3.connect(DATABASE) as connection:
-            print("✅ Connected to SQLite DB")
+            logging.info("✅ Connected to SQLite DB")
             cursor = connection.cursor()
 
             while True:
-                print(f"\n📦 Fetching vulnerabilities starting at index {start_index}...")
+                logging.info(f"\n📦 Fetching vulnerabilities starting at index {start_index}...")
 
                 params = {
                     "resultsPerPage": RESULTS_PER_PAGE,
-                    "startIndex": start_index
+                    "startIndex": start_index,
+                    "lastModStartDate": LASTMOD_START_DATE
                 }
 
                 response = safe_request(NVDAPIURL, headers=HEADERS, params=params)
 
                 if response.status_code != 200:
-                    print(f"❌ Request failed: {response.status_code}")
-                    print(f"Response: {response.text}")
+                    logging.error(f"❌ Request failed: {response.status_code}")
+                    logging.error(f"Response: {response.text}")
                     break
 
                 data = response.json()
                 vulnerabilities = data.get("vulnerabilities", [])
 
                 if not vulnerabilities:
-                    print("✅ No more vulnerabilities to fetch.")
+                    logging.info("✅ No more vulnerabilities to fetch.")
                     break
 
-                print(f"Retrieved {len(vulnerabilities)} vulnerabilities.")
+                logging.info(f"Retrieved {len(vulnerabilities)} vulnerabilities.")
 
                 for vulnerability in vulnerabilities:
                     cve = vulnerability.get("cve", {})
@@ -181,7 +200,7 @@ def insert_data_to_NVD_Tables():
                             operator = node.get("operator")
                             # process normally
                         else:
-                            print(f"⚠️ Unexpected node format, skipping: {node}")
+                            logging.error(f"⚠️ Unexpected node format, skipping: {node}")
 
                         cve_id = cve.get("id")
                         operator = node.get("operator")
@@ -229,21 +248,38 @@ def insert_data_to_NVD_Tables():
                                     VALUES (?, ?)
                                 ''', (cve_id, "unknown"))
                 connection.commit()
-                print(f"✅ Inserted {len(vulnerabilities)} vulnerabilities")
+                logging.info(f"✅ Inserted {len(vulnerabilities)} vulnerabilities")
 
                 start_index += RESULTS_PER_PAGE
-                time.sleep(6)
+                time.sleep(10)
 
-            print(f"\n🏁 Finished inserting all vulnerabilities. Total inserted: {total_inserted}")
-
+            logging.info(f"\n🏁 Finished inserting all vulnerabilities. Total inserted: {total_inserted}")
+    # Handle exceptions
     except sqlite3.OperationalError as e:
-        print(f"SQLite error: {e}")
+        logging.error(f"SQLite error: {e}")
+    except requests.RequestException as e:
+        logging.error(f"Request error: {e}")
     except Exception as e:
-        print(f"General error: {e}")
+        logging.error(f"General error: {e}")
     finally:
         connection.close()
         end_time = time.time()
         elapsed_time = end_time - start_time
         minutes, seconds = divmod(elapsed_time, 60)
-        print(f"\n⏱️ Elapsed Time: {int(minutes)} minutes {int(seconds)} seconds")
+        logging.info(f"\n⏱️ Elapsed Time: {int(minutes)} minutes {int(seconds)} seconds")
+        save_last_update(datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%S.000Z"))
+        logging.info(f"✅ Task Finished at {datetime.now(timezone.utc).strftime('%Y-%m-%dT%H:%M:%S.000Z')}, saved to last-sync.txt")
+# Function to save the last update timestamp to a file
+def save_last_update(timestamp: str, filename="last-sync.txt"):
+    with open(filename, "w") as file:
+        file.write(timestamp)
 
+
+'''
+# Example usage and time taken from the last run
+
+🏁 Finished inserting all vulnerabilities. Total inserted: 291023
+
+⏱️ Elapsed Time: 48 minutes 11 seconds
+✅ NVD data parsed successfully.
+'''

@@ -1,6 +1,9 @@
 import json
 import sqlite3
-
+import logging
+from logger import setup_logger
+from ConnSQLite import create_table
+setup_logger()
 DATABASE = "WHITEHAT.db"
 
 def load_attack_data():
@@ -18,7 +21,19 @@ def insert_data_to_MITREATTACK_Tables():
     try:
         with sqlite3.connect(DATABASE) as connection:
             cursor = connection.cursor()
-
+            cursor.executescript('''
+                drop table if exists ExternalReferences;
+                drop table if exists TechniqueCWEMapping;
+                drop table if exists TechniqueMitigationMapping;
+                drop table if exists TechniqueKillChain;
+                drop table if exists TechniquePlatforms;
+                drop table if exists TechniquePermissions;
+                drop table if exists TechniqueDataSources;
+                drop table if exists TechniqueDefensesBypassed;
+                drop table if exists DomainTechniqueMapping;
+                drop table if exists Attack_technique;
+            ''')
+            create_table(connection)
             for attack_data in attack_files:
                 for obj in attack_data["objects"]:
                     if obj.get("type") == "attack-pattern":
@@ -78,12 +93,37 @@ def insert_data_to_MITREATTACK_Tables():
                             source = reference.get("source_name")
                             url = reference.get("url")
                             ref_description = reference.get("description")
-                            external_id = reference.get("external_id")
-
+                            try:
+                                external_id = reference.get("external_id")
+                            except KeyError:
+                                external_id = None
+                           
+                                    
                             cursor.execute('''
-                                INSERT OR IGNORE INTO ExternalReferences (technique_ID, source, url, description)
-                                VALUES (?, ?, ?, ?)
-                            ''', (technique_id, source, url, ref_description))
+                                 -- ExternalReferences
+                                    create table if not exists ExternalReferences (
+                                        id INTEGER PRIMARY KEY AUTOINCREMENT,
+                                        CVE_ID TEXT,
+                                        external_id TEXT,
+                                        technique_ID TEXT,
+                                        source TEXT,
+                                        url TEXT,
+                                        description TEXT,
+                                        FOREIGN key (technique_ID) references Attack_technique(technique_ID),
+                                        FOREIGN KEY (CVE_ID) REFERENCES CVE(CVE_ID)
+                                    );''')
+                            source_name= reference.get("source_name")
+                            if source_name and source_name.startswith("NVD"):
+                                cve_id=source_name.split(" ")[1]
+                                cursor.execute('''
+                                    INSERT OR IGNORE INTO ExternalReferences (technique_ID, source, url, description, CVE_ID, external_id)
+                                    VALUES (?, ?, ?, ?, ?, ?)
+                                ''', (technique_id, source, url, ref_description,cve_id, external_id))
+                            else:
+                                cursor.execute('''
+                                    INSERT OR IGNORE INTO ExternalReferences (technique_ID, source, url, description, external_id)
+                                    VALUES (?, ?, ?, ?, ?)
+                                ''', (technique_id, source, url, ref_description, external_id))
 
                             if source and source.lower() == "cwe" and external_id:
                                 cursor.execute('''
@@ -99,11 +139,12 @@ def insert_data_to_MITREATTACK_Tables():
                         ''', (obj.get("source_ref"), obj.get("target_ref")))
 
             connection.commit()
-            print("✅ MITRE ATT&CK data inserted successfully.")
+            logging.info("✅ MITRE ATT&CK data inserted successfully.")
 
     except sqlite3.OperationalError as e:
-        print(f"SQLite error: {e}")
+        logging.error(f"SQLite error: {e}")
     except Exception as e:
-        print(f"Error: {e}")
+        logging.error(f"Error: {e}")
     finally:
         connection.close()
+insert_data_to_MITREATTACK_Tables()
