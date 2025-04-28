@@ -17,11 +17,17 @@ def get_last_update(filename="last-sync.txt"):
 # Configuration
 NVDAPIURL = "https://services.nvd.nist.gov/rest/json/cves/2.0"
 DATABASE = "project-src/database/WHITEHAT.db"
-NVDAPIKEY = 'b7f081ac-7ba8-482d-9c11-80aa51c5f666'  # Replace with your actual API key
+NVDAPIKEY = '4c13a7c8-d650-40af-975c-aad7ed9200c5'  # Replace with your actual API key
 # Note: The API key should be kept secret and not hardcoded in production code.
 HEADERS = {"apiKey": NVDAPIKEY}
 RESULTS_PER_PAGE = 2000
-LASTMOD_START_DATE = get_last_update("last-sync.txt") or (datetime.now(timezone.utc) - timedelta(days=1)).strftime("%Y-%m-%dT%H:%M:%S.000Z")
+# Calculate the date window
+today = (datetime.now(timezone.utc)- timedelta(days=2))
+three_days_ago = today - timedelta(days=2)
+
+#LASTMOD_START_DATE = three_days_ago.strftime("%Y-%m-%dT%H:%M:%S.000Z")
+#LASTMOD_END_DATE = today.strftime("%Y-%m-%dT%H:%M:%S.000Z")
+
 
 # Importing the ChunkedEncodingError exception for handling chunked responses
 from requests.exceptions import ChunkedEncodingError
@@ -44,7 +50,7 @@ def safe_request(url, headers, params, retries=5, delay=10):
 # Function to insert data into NVD tables
 def insert_data_to_NVD_Tables():
     start_time = time.time()
-    start_index = 0
+    start_index = 260000
     total_inserted = 0
 
     try:
@@ -58,7 +64,8 @@ def insert_data_to_NVD_Tables():
                 params = {
                     "resultsPerPage": RESULTS_PER_PAGE,
                     "startIndex": start_index,
-                    "lastModStartDate": LASTMOD_START_DATE
+                    #"lastModStartDate": LASTMOD_START_DATE,
+                    #"lastModEndDate": LASTMOD_END_DATE
                 }
 
                 response = safe_request(NVDAPIURL, headers=HEADERS, params=params)
@@ -220,7 +227,7 @@ def insert_data_to_NVD_Tables():
                                 ''', (cve_id, match_criteria_id, vuln_status, criteria, match_criteria_id))
 
                     # --- Insert References ---
-                    for reference in cve.get("reference", []):
+                    for reference in cve.get("references", []):
                         url = reference.get("url")
                         source = reference.get("source")
                         cursor.execute('''

@@ -1,22 +1,773 @@
-2025-04-23 08:42:26,775 - ERROR - Error: Cursor.executescript() takes exactly one argument (2 given)
-2025-04-23 08:44:12,670 - ERROR - SQLite error: duplicate column name: external_id
-2025-04-23 08:44:49,723 - ERROR - Error: Incorrect number of bindings supplied. The current statement uses 1, and there are 9 supplied.
-2025-04-23 08:47:19,228 - INFO - \u2705 MITRE ATT&CK data inserted successfully.
-2025-04-23 09:18:47,450 - ERROR - SQLite error: near "drop": syntax error
-2025-04-23 09:21:00,974 - INFO - \u2705 Tables created successfully!
-2025-04-23 09:21:00,976 - ERROR - SQLite error: near "foreign": syntax error
-2025-04-23 09:24:35,855 - INFO - \u2705 Tables created successfully!
-2025-04-23 09:24:35,856 - ERROR - SQLite error: near "technique_ID": syntax error
-2025-04-23 09:26:18,036 - INFO - \u2705 Tables created successfully!
-2025-04-23 09:26:18,038 - ERROR - SQLite error: near "technique_ID": syntax error
-2025-04-23 09:27:59,990 - INFO - \u2705 Tables created successfully!
-2025-04-23 09:27:59,992 - ERROR - SQLite error: near "technique_ID": syntax error
-2025-04-23 09:28:18,912 - ERROR - SQLite error: table "ExternalReferences" has more than one primary key
-2025-04-23 09:31:15,631 - ERROR - SQLite error: table "ExternalReferences" has more than one primary key
-2025-04-23 09:31:50,515 - ERROR - SQLite error: table "ExternalReferences" has more than one primary key
-2025-04-23 09:33:47,699 - ERROR - SQLite error: table "ExternalReferences" has more than one primary key
-2025-04-23 09:34:58,143 - ERROR - SQLite error: table "ExternalReferences" has more than one primary key
-2025-04-23 09:36:30,337 - INFO - \u2705 Tables created successfully!
-2025-04-23 09:36:30,346 - ERROR - SQLite error: table ExternalReferences has no column named CVD_ID
-2025-04-23 09:37:08,818 - INFO - \u2705 Tables created successfully!
-2025-04-23 09:37:08,897 - INFO - \u2705 MITRE ATT&CK data inserted successfully.
+2025-04-25 21:53:31,387 - INFO - Creating database...
+2025-04-25 21:53:34,014 - INFO - ✅ Connection to SQLite DB successful
+2025-04-25 21:53:34,697 - INFO - 🔃 Creating tables...
+2025-04-25 21:53:36,344 - INFO - ✅ Tables created successfully!
+2025-04-25 21:53:40,156 - INFO - ✅ Database created successfully
+2025-04-25 21:53:40,156 - INFO - ✅ Database and tables created successfully.
+2025-04-25 21:53:45,127 - INFO - 🔵 Parsing NVD data...
+2025-04-25 21:53:45,128 - INFO - ✅ Connected to SQLite DB
+2025-04-25 21:53:45,129 - INFO - 
+📦 Fetching vulnerabilities starting at index 0...
+2025-04-25 21:58:01,298 - INFO - Creating database...
+2025-04-25 21:58:01,299 - INFO - ✅ Connection to SQLite DB successful
+2025-04-25 21:58:01,299 - INFO - 🔃 Creating tables...
+2025-04-25 21:58:01,302 - INFO - ✅ Tables created successfully!
+2025-04-25 21:58:01,302 - INFO - ✅ Database created successfully
+2025-04-25 21:58:01,302 - INFO - ✅ Database and tables created successfully.
+2025-04-25 21:58:01,302 - INFO - 🔵 Parsing NVD data...
+2025-04-25 21:58:01,302 - INFO - ✅ Connected to SQLite DB
+2025-04-25 21:58:01,303 - INFO - 
+📦 Fetching vulnerabilities starting at index 0...
+2025-04-25 22:00:02,615 - INFO - Creating database...
+2025-04-25 22:00:04,387 - INFO - ✅ Connection to SQLite DB successful
+2025-04-25 22:00:04,539 - INFO - 🔃 Creating tables...
+2025-04-25 22:00:05,207 - INFO - ✅ Tables created successfully!
+2025-04-25 22:00:05,916 - INFO - ✅ Database created successfully
+2025-04-25 22:00:06,428 - INFO - ✅ Database and tables created successfully.
+2025-04-25 22:00:07,380 - INFO - 🔵 Parsing NVD data...
+2025-04-25 22:00:10,065 - INFO - ✅ Connected to SQLite DB
+2025-04-25 22:00:12,472 - INFO - 
+📦 Fetching vulnerabilities starting at index 0...
+2025-04-25 22:01:39,115 - ERROR - ⚠️ ChunkedEncodingError, retrying in 10 seconds... (attempt 1)
+2025-04-25 22:05:40,273 - INFO - Creating database...
+2025-04-25 22:05:41,131 - INFO - ✅ Connection to SQLite DB successful
+2025-04-25 22:05:41,327 - INFO - 🔃 Creating tables...
+2025-04-25 22:05:43,154 - INFO - ✅ Tables created successfully!
+2025-04-25 22:05:43,995 - INFO - ✅ Database created successfully
+2025-04-25 22:05:45,086 - INFO - ✅ Database and tables created successfully.
+2025-04-25 22:05:47,183 - INFO - 🔵 Parsing NVD data...
+2025-04-25 22:05:50,386 - INFO - ✅ Connected to SQLite DB
+2025-04-25 22:05:52,183 - INFO - 
+📦 Fetching vulnerabilities starting at index 0...
+2025-04-25 22:06:48,214 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-25 22:06:48,328 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-25 22:06:58,329 - INFO - 
+📦 Fetching vulnerabilities starting at index 2000...
+2025-04-25 22:08:06,636 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-25 22:08:06,768 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-25 22:08:16,769 - INFO - 
+📦 Fetching vulnerabilities starting at index 4000...
+2025-04-25 22:08:24,788 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-25 22:08:24,924 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-25 22:08:34,925 - INFO - 
+📦 Fetching vulnerabilities starting at index 6000...
+2025-04-25 22:08:50,321 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-25 22:08:50,473 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-25 22:09:00,475 - INFO - 
+📦 Fetching vulnerabilities starting at index 8000...
+2025-04-25 22:09:18,333 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-25 22:09:18,518 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-25 22:09:28,519 - INFO - 
+📦 Fetching vulnerabilities starting at index 10000...
+2025-04-25 22:09:58,133 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-25 22:09:58,333 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-25 22:10:08,334 - INFO - 
+📦 Fetching vulnerabilities starting at index 12000...
+2025-04-25 22:10:28,542 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-25 22:10:28,710 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-25 22:10:38,711 - INFO - 
+📦 Fetching vulnerabilities starting at index 14000...
+2025-04-25 22:10:56,146 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-25 22:10:56,312 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-25 22:11:06,313 - INFO - 
+📦 Fetching vulnerabilities starting at index 16000...
+2025-04-25 22:11:26,127 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-25 22:11:26,296 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-25 22:11:36,296 - INFO - 
+📦 Fetching vulnerabilities starting at index 18000...
+2025-04-25 22:12:27,013 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-25 22:12:27,164 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-25 22:12:37,165 - INFO - 
+📦 Fetching vulnerabilities starting at index 20000...
+2025-04-25 22:14:22,212 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-25 22:14:22,355 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-25 22:14:32,355 - INFO - 
+📦 Fetching vulnerabilities starting at index 22000...
+2025-04-25 22:15:20,683 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-25 22:15:20,829 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-25 22:15:30,831 - INFO - 
+📦 Fetching vulnerabilities starting at index 24000...
+2025-04-25 22:16:00,337 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-25 22:16:00,477 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-25 22:16:10,478 - INFO - 
+📦 Fetching vulnerabilities starting at index 26000...
+2025-04-25 22:16:38,592 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-25 22:16:38,738 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-25 22:16:48,739 - INFO - 
+📦 Fetching vulnerabilities starting at index 28000...
+2025-04-25 22:17:22,845 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-25 22:17:22,996 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-25 22:17:32,997 - INFO - 
+📦 Fetching vulnerabilities starting at index 30000...
+2025-04-25 22:19:33,547 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-25 22:19:33,721 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-25 22:19:43,722 - INFO - 
+📦 Fetching vulnerabilities starting at index 32000...
+2025-04-25 22:20:14,602 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-25 22:20:14,822 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-25 22:20:24,823 - INFO - 
+📦 Fetching vulnerabilities starting at index 34000...
+2025-04-25 22:20:52,192 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-25 22:20:52,413 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-25 22:21:02,414 - INFO - 
+📦 Fetching vulnerabilities starting at index 36000...
+2025-04-25 22:21:13,823 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-25 22:21:14,108 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-25 22:21:24,109 - INFO - 
+📦 Fetching vulnerabilities starting at index 38000...
+2025-04-25 22:22:26,389 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-25 22:22:26,713 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-25 22:22:36,714 - INFO - 
+📦 Fetching vulnerabilities starting at index 40000...
+2025-04-25 22:23:48,521 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-25 22:23:48,837 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-25 22:23:58,838 - INFO - 
+📦 Fetching vulnerabilities starting at index 42000...
+2025-04-25 22:24:32,530 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-25 22:24:32,822 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-25 22:24:42,822 - INFO - 
+📦 Fetching vulnerabilities starting at index 44000...
+2025-04-25 22:25:58,849 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-25 22:25:59,291 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-25 22:26:09,292 - INFO - 
+📦 Fetching vulnerabilities starting at index 46000...
+2025-04-25 22:28:42,793 - ERROR - ⚠️ ChunkedEncodingError, retrying in 10 seconds... (attempt 1)
+2025-04-25 22:29:30,542 - ERROR - ⚠️ ChunkedEncodingError, retrying in 10 seconds... (attempt 2)
+2025-04-25 22:30:44,941 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-25 22:30:45,398 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-25 22:30:55,400 - INFO - 
+📦 Fetching vulnerabilities starting at index 48000...
+2025-04-25 22:31:31,313 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-25 22:31:31,674 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-25 22:31:41,676 - INFO - 
+📦 Fetching vulnerabilities starting at index 50000...
+2025-04-25 22:32:21,010 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-25 22:32:21,426 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-25 22:32:31,427 - INFO - 
+📦 Fetching vulnerabilities starting at index 52000...
+2025-04-25 22:34:58,016 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-25 22:34:58,432 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-25 22:35:08,433 - INFO - 
+📦 Fetching vulnerabilities starting at index 54000...
+2025-04-25 22:36:04,534 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-25 22:36:05,007 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-25 22:36:15,007 - INFO - 
+📦 Fetching vulnerabilities starting at index 56000...
+2025-04-25 22:36:52,034 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-25 22:36:52,381 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-25 22:37:02,382 - INFO - 
+📦 Fetching vulnerabilities starting at index 58000...
+2025-04-25 22:38:28,152 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-25 22:38:28,508 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-25 22:38:38,510 - INFO - 
+📦 Fetching vulnerabilities starting at index 60000...
+2025-04-25 22:40:17,962 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-25 22:40:18,223 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-25 22:40:28,224 - INFO - 
+📦 Fetching vulnerabilities starting at index 62000...
+2025-04-25 22:43:38,779 - ERROR - ⚠️ ChunkedEncodingError, retrying in 10 seconds... (attempt 1)
+2025-04-25 22:48:20,854 - ERROR - ⚠️ ChunkedEncodingError, retrying in 10 seconds... (attempt 2)
+2025-04-25 22:53:05,588 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-25 22:53:05,818 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-25 22:53:15,820 - INFO - 
+📦 Fetching vulnerabilities starting at index 64000...
+2025-04-25 22:55:18,098 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-25 22:55:18,271 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-25 22:55:28,273 - INFO - 
+📦 Fetching vulnerabilities starting at index 66000...
+2025-04-25 22:57:13,902 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-25 22:57:14,094 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-25 22:57:24,096 - INFO - 
+📦 Fetching vulnerabilities starting at index 68000...
+2025-04-25 22:58:07,948 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-25 22:58:08,148 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-25 22:58:18,149 - INFO - 
+📦 Fetching vulnerabilities starting at index 70000...
+2025-04-25 22:59:00,953 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-25 22:59:01,143 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-25 22:59:11,144 - INFO - 
+📦 Fetching vulnerabilities starting at index 72000...
+2025-04-25 23:00:54,194 - ERROR - ⚠️ ChunkedEncodingError, retrying in 10 seconds... (attempt 1)
+2025-04-25 23:03:31,657 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-25 23:03:31,833 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-25 23:03:41,833 - INFO - 
+📦 Fetching vulnerabilities starting at index 74000...
+2025-04-25 23:04:23,516 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-25 23:04:23,733 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-25 23:04:33,733 - INFO - 
+📦 Fetching vulnerabilities starting at index 76000...
+2025-04-25 23:05:24,613 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-25 23:05:24,861 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-25 23:05:34,863 - INFO - 
+📦 Fetching vulnerabilities starting at index 78000...
+2025-04-25 23:06:00,082 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-25 23:06:00,293 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-25 23:06:10,294 - INFO - 
+📦 Fetching vulnerabilities starting at index 80000...
+2025-04-25 23:06:38,887 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-25 23:06:39,063 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-25 23:06:49,063 - INFO - 
+📦 Fetching vulnerabilities starting at index 82000...
+2025-04-25 23:06:57,004 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-25 23:06:57,152 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-25 23:07:07,154 - INFO - 
+📦 Fetching vulnerabilities starting at index 84000...
+2025-04-25 23:07:23,650 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-25 23:07:23,846 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-25 23:07:33,847 - INFO - 
+📦 Fetching vulnerabilities starting at index 86000...
+2025-04-25 23:07:51,251 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-25 23:07:51,343 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-25 23:08:01,344 - INFO - 
+📦 Fetching vulnerabilities starting at index 88000...
+2025-04-25 23:08:08,115 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-25 23:08:08,209 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-25 23:08:18,210 - INFO - 
+📦 Fetching vulnerabilities starting at index 90000...
+2025-04-25 23:08:36,410 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-25 23:08:36,590 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-25 23:08:46,590 - INFO - 
+📦 Fetching vulnerabilities starting at index 92000...
+2025-04-25 23:09:23,638 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-25 23:09:23,843 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-25 23:09:33,843 - INFO - 
+📦 Fetching vulnerabilities starting at index 94000...
+2025-04-25 23:10:51,163 - ERROR - ⚠️ ChunkedEncodingError, retrying in 10 seconds... (attempt 1)
+2025-04-25 23:11:56,613 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-25 23:11:56,794 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-25 23:12:06,795 - INFO - 
+📦 Fetching vulnerabilities starting at index 96000...
+2025-04-25 23:12:15,735 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-25 23:12:15,903 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-25 23:12:25,904 - INFO - 
+📦 Fetching vulnerabilities starting at index 98000...
+2025-04-25 23:12:36,699 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-25 23:12:36,864 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-25 23:12:46,865 - INFO - 
+📦 Fetching vulnerabilities starting at index 100000...
+2025-04-25 23:13:03,764 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-25 23:13:03,926 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-25 23:13:13,927 - INFO - 
+📦 Fetching vulnerabilities starting at index 102000...
+2025-04-25 23:13:30,817 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-25 23:13:30,936 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-25 23:13:40,937 - INFO - 
+📦 Fetching vulnerabilities starting at index 104000...
+2025-04-25 23:14:45,721 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-25 23:14:45,923 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-25 23:14:55,924 - INFO - 
+📦 Fetching vulnerabilities starting at index 106000...
+2025-04-25 23:15:11,581 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-25 23:15:11,730 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-25 23:15:21,731 - INFO - 
+📦 Fetching vulnerabilities starting at index 108000...
+2025-04-25 23:16:03,231 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-25 23:16:03,403 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-25 23:16:13,405 - INFO - 
+📦 Fetching vulnerabilities starting at index 110000...
+2025-04-25 23:16:44,290 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-25 23:16:44,460 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-25 23:16:54,462 - INFO - 
+📦 Fetching vulnerabilities starting at index 112000...
+2025-04-25 23:17:04,870 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-25 23:17:05,034 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-25 23:17:15,036 - INFO - 
+📦 Fetching vulnerabilities starting at index 114000...
+2025-04-25 23:17:36,006 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-25 23:17:36,169 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-25 23:17:46,170 - INFO - 
+📦 Fetching vulnerabilities starting at index 116000...
+2025-04-25 23:18:05,683 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-25 23:18:05,835 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-25 23:18:15,836 - INFO - 
+📦 Fetching vulnerabilities starting at index 118000...
+2025-04-25 23:18:23,398 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-25 23:18:23,537 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-25 23:18:33,538 - INFO - 
+📦 Fetching vulnerabilities starting at index 120000...
+2025-04-25 23:18:51,112 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-25 23:18:51,288 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-25 23:19:01,289 - INFO - 
+📦 Fetching vulnerabilities starting at index 122000...
+2025-04-25 23:19:19,073 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-25 23:19:19,246 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-25 23:19:29,247 - INFO - 
+📦 Fetching vulnerabilities starting at index 124000...
+2025-04-25 23:19:40,558 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-25 23:19:40,723 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-25 23:19:50,724 - INFO - 
+📦 Fetching vulnerabilities starting at index 126000...
+2025-04-25 23:20:39,538 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-25 23:20:39,705 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-25 23:20:49,706 - INFO - 
+📦 Fetching vulnerabilities starting at index 128000...
+2025-04-25 23:21:10,425 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-25 23:21:10,585 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-25 23:21:20,586 - INFO - 
+📦 Fetching vulnerabilities starting at index 130000...
+2025-04-25 23:21:29,730 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-25 23:21:29,901 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-25 23:21:39,903 - INFO - 
+📦 Fetching vulnerabilities starting at index 132000...
+2025-04-25 23:21:52,256 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-25 23:21:52,447 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-25 23:22:02,448 - INFO - 
+📦 Fetching vulnerabilities starting at index 134000...
+2025-04-25 23:22:13,027 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-25 23:22:13,194 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-25 23:22:23,196 - INFO - 
+📦 Fetching vulnerabilities starting at index 136000...
+2025-04-25 23:23:13,160 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-25 23:23:13,334 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-25 23:23:23,335 - INFO - 
+📦 Fetching vulnerabilities starting at index 138000...
+2025-04-25 23:23:39,016 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-25 23:23:39,205 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-25 23:23:49,206 - INFO - 
+📦 Fetching vulnerabilities starting at index 140000...
+2025-04-25 23:24:22,363 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-25 23:24:22,552 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-25 23:24:32,553 - INFO - 
+📦 Fetching vulnerabilities starting at index 142000...
+2025-04-25 23:25:01,709 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-25 23:25:01,904 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-25 23:25:11,906 - INFO - 
+📦 Fetching vulnerabilities starting at index 144000...
+2025-04-25 23:25:54,555 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-25 23:25:54,779 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-25 23:26:04,779 - INFO - 
+📦 Fetching vulnerabilities starting at index 146000...
+2025-04-25 23:26:59,626 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-25 23:26:59,808 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-25 23:27:09,809 - INFO - 
+📦 Fetching vulnerabilities starting at index 148000...
+2025-04-25 23:28:14,263 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-25 23:28:14,431 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-25 23:28:24,432 - INFO - 
+📦 Fetching vulnerabilities starting at index 150000...
+2025-04-25 23:29:41,372 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-25 23:29:41,556 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-25 23:29:51,557 - INFO - 
+📦 Fetching vulnerabilities starting at index 152000...
+2025-04-25 23:30:11,462 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-25 23:30:11,632 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-25 23:30:21,634 - INFO - 
+📦 Fetching vulnerabilities starting at index 154000...
+2025-04-25 23:31:25,182 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-25 23:31:25,331 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-25 23:31:35,332 - INFO - 
+📦 Fetching vulnerabilities starting at index 156000...
+2025-04-25 23:32:12,305 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-25 23:32:12,514 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-25 23:32:22,516 - INFO - 
+📦 Fetching vulnerabilities starting at index 158000...
+2025-04-25 23:34:22,002 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-25 23:34:22,266 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-25 23:34:32,267 - INFO - 
+📦 Fetching vulnerabilities starting at index 160000...
+2025-04-25 23:35:16,573 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-25 23:35:16,792 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-25 23:35:26,793 - INFO - 
+📦 Fetching vulnerabilities starting at index 162000...
+2025-04-25 23:36:25,773 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-25 23:36:25,978 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-25 23:36:35,979 - INFO - 
+📦 Fetching vulnerabilities starting at index 164000...
+2025-04-25 23:37:20,066 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-25 23:37:20,266 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-25 23:37:30,267 - INFO - 
+📦 Fetching vulnerabilities starting at index 166000...
+2025-04-25 23:39:20,007 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-25 23:39:20,195 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-25 23:39:30,196 - INFO - 
+📦 Fetching vulnerabilities starting at index 168000...
+2025-04-25 23:40:30,796 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-25 23:40:30,970 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-25 23:40:40,970 - INFO - 
+📦 Fetching vulnerabilities starting at index 170000...
+2025-04-25 23:41:31,635 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-25 23:41:31,830 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-25 23:41:41,831 - INFO - 
+📦 Fetching vulnerabilities starting at index 172000...
+2025-04-25 23:42:57,956 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-25 23:42:58,180 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-25 23:43:08,180 - INFO - 
+📦 Fetching vulnerabilities starting at index 174000...
+2025-04-25 23:44:32,306 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-25 23:44:32,476 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-25 23:44:42,477 - INFO - 
+📦 Fetching vulnerabilities starting at index 176000...
+2025-04-25 23:44:58,408 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-25 23:44:58,579 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-25 23:45:08,580 - INFO - 
+📦 Fetching vulnerabilities starting at index 178000...
+2025-04-25 23:45:33,402 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-25 23:45:33,583 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-25 23:45:43,584 - INFO - 
+📦 Fetching vulnerabilities starting at index 180000...
+2025-04-25 23:46:51,299 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-25 23:46:51,528 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-25 23:47:01,529 - INFO - 
+📦 Fetching vulnerabilities starting at index 182000...
+2025-04-25 23:47:25,359 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-25 23:47:25,527 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-25 23:47:35,527 - INFO - 
+📦 Fetching vulnerabilities starting at index 184000...
+2025-04-25 23:48:16,519 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-25 23:48:16,716 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-25 23:48:26,717 - INFO - 
+📦 Fetching vulnerabilities starting at index 186000...
+2025-04-25 23:49:49,068 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-25 23:49:49,255 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-25 23:49:59,256 - INFO - 
+📦 Fetching vulnerabilities starting at index 188000...
+2025-04-25 23:50:07,551 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-25 23:50:07,724 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-25 23:50:17,724 - INFO - 
+📦 Fetching vulnerabilities starting at index 190000...
+2025-04-25 23:51:20,491 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-25 23:51:20,638 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-25 23:51:30,640 - INFO - 
+📦 Fetching vulnerabilities starting at index 192000...
+2025-04-25 23:51:56,400 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-25 23:51:56,541 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-25 23:52:06,542 - INFO - 
+📦 Fetching vulnerabilities starting at index 194000...
+2025-04-25 23:53:00,124 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-25 23:53:00,298 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-25 23:53:10,300 - INFO - 
+📦 Fetching vulnerabilities starting at index 196000...
+2025-04-25 23:53:44,276 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-25 23:53:44,463 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-25 23:53:54,464 - INFO - 
+📦 Fetching vulnerabilities starting at index 198000...
+2025-04-25 23:55:11,495 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-25 23:55:11,686 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-25 23:55:21,687 - INFO - 
+📦 Fetching vulnerabilities starting at index 200000...
+2025-04-25 23:56:17,014 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-25 23:56:17,194 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-25 23:56:27,195 - INFO - 
+📦 Fetching vulnerabilities starting at index 202000...
+2025-04-25 23:56:35,383 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-25 23:56:35,528 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-25 23:56:45,530 - INFO - 
+📦 Fetching vulnerabilities starting at index 204000...
+2025-04-25 23:56:53,065 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-25 23:56:53,257 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-25 23:57:03,258 - INFO - 
+📦 Fetching vulnerabilities starting at index 206000...
+2025-04-25 23:57:32,838 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-25 23:57:33,064 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-25 23:57:43,065 - INFO - 
+📦 Fetching vulnerabilities starting at index 208000...
+2025-04-25 23:57:54,406 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-25 23:57:54,579 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-25 23:58:04,581 - INFO - 
+📦 Fetching vulnerabilities starting at index 210000...
+2025-04-25 23:58:23,574 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-25 23:58:23,721 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-25 23:58:33,722 - INFO - 
+📦 Fetching vulnerabilities starting at index 212000...
+2025-04-25 23:59:05,875 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-25 23:59:06,080 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-25 23:59:16,081 - INFO - 
+📦 Fetching vulnerabilities starting at index 214000...
+2025-04-25 23:59:41,540 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-25 23:59:41,731 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-25 23:59:51,732 - INFO - 
+📦 Fetching vulnerabilities starting at index 216000...
+2025-04-26 00:00:05,630 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-26 00:00:05,841 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-26 00:00:15,842 - INFO - 
+📦 Fetching vulnerabilities starting at index 218000...
+2025-04-26 00:01:32,097 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-26 00:01:32,356 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-26 00:01:42,357 - INFO - 
+📦 Fetching vulnerabilities starting at index 220000...
+2025-04-26 00:03:41,990 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-26 00:03:42,172 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-26 00:03:52,173 - INFO - 
+📦 Fetching vulnerabilities starting at index 222000...
+2025-04-26 00:09:56,720 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-26 00:09:56,920 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-26 00:10:06,921 - INFO - 
+📦 Fetching vulnerabilities starting at index 224000...
+2025-04-26 00:11:38,472 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-26 00:11:38,642 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-26 00:11:48,643 - INFO - 
+📦 Fetching vulnerabilities starting at index 226000...
+2025-04-26 00:12:43,330 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-26 00:12:43,533 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-26 00:12:53,533 - INFO - 
+📦 Fetching vulnerabilities starting at index 228000...
+2025-04-26 00:14:51,042 - ERROR - ⚠️ ChunkedEncodingError, retrying in 10 seconds... (attempt 1)
+2025-04-26 00:16:55,186 - ERROR - ⚠️ ChunkedEncodingError, retrying in 10 seconds... (attempt 2)
+2025-04-26 00:18:50,402 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-26 00:18:50,585 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-26 00:19:00,586 - INFO - 
+📦 Fetching vulnerabilities starting at index 230000...
+2025-04-26 00:19:26,153 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-26 00:19:26,350 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-26 00:19:36,351 - INFO - 
+📦 Fetching vulnerabilities starting at index 232000...
+2025-04-26 00:19:57,458 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-26 00:19:57,654 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-26 00:20:07,655 - INFO - 
+📦 Fetching vulnerabilities starting at index 234000...
+2025-04-26 00:20:29,427 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-26 00:20:29,611 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-26 00:20:39,612 - INFO - 
+📦 Fetching vulnerabilities starting at index 236000...
+2025-04-26 00:21:07,227 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-26 00:21:07,396 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-26 00:21:17,398 - INFO - 
+📦 Fetching vulnerabilities starting at index 238000...
+2025-04-26 00:22:28,013 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-26 00:22:28,177 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-26 00:22:38,178 - INFO - 
+📦 Fetching vulnerabilities starting at index 240000...
+2025-04-26 00:24:10,150 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-26 00:24:10,316 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-26 00:24:20,318 - INFO - 
+📦 Fetching vulnerabilities starting at index 242000...
+2025-04-26 00:24:29,121 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-26 00:24:29,259 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-26 00:24:39,261 - INFO - 
+📦 Fetching vulnerabilities starting at index 244000...
+2025-04-26 00:25:02,215 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-26 00:25:02,355 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-26 00:25:12,356 - INFO - 
+📦 Fetching vulnerabilities starting at index 246000...
+2025-04-26 00:25:30,542 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-26 00:25:30,666 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-26 00:25:40,666 - INFO - 
+📦 Fetching vulnerabilities starting at index 248000...
+2025-04-26 00:25:59,677 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-26 00:25:59,837 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-26 00:26:09,838 - INFO - 
+📦 Fetching vulnerabilities starting at index 250000...
+2025-04-26 00:26:30,175 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-26 00:26:30,310 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-26 00:26:40,311 - INFO - 
+📦 Fetching vulnerabilities starting at index 252000...
+2025-04-26 00:26:51,369 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-26 00:26:51,516 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-26 00:27:01,518 - INFO - 
+📦 Fetching vulnerabilities starting at index 254000...
+2025-04-26 00:27:42,846 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-26 00:27:43,041 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-26 00:27:53,041 - INFO - 
+📦 Fetching vulnerabilities starting at index 256000...
+2025-04-26 00:28:17,600 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-26 00:28:17,753 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-26 00:28:27,754 - INFO - 
+📦 Fetching vulnerabilities starting at index 258000...
+2025-04-26 00:28:40,401 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-26 00:28:40,592 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-26 00:28:50,593 - INFO - 
+📦 Fetching vulnerabilities starting at index 260000...
+2025-04-26 01:22:10,126 - INFO - 🔵 Parsing NVD data...
+2025-04-26 01:22:17,697 - INFO - ✅ Connected to SQLite DB
+2025-04-26 01:22:19,641 - INFO - 
+📦 Fetching vulnerabilities starting at index 260000...
+2025-04-26 01:23:02,374 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-26 01:23:56,690 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-26 01:24:06,691 - INFO - 
+📦 Fetching vulnerabilities starting at index 262000...
+2025-04-26 01:25:03,410 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-26 01:25:04,941 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-26 01:25:14,942 - INFO - 
+📦 Fetching vulnerabilities starting at index 264000...
+2025-04-26 01:26:49,685 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-26 01:26:51,196 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-26 01:27:01,198 - INFO - 
+📦 Fetching vulnerabilities starting at index 266000...
+2025-04-26 01:27:53,204 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-26 01:27:53,382 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-26 01:28:03,383 - INFO - 
+📦 Fetching vulnerabilities starting at index 268000...
+2025-04-26 01:30:09,425 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-26 01:30:09,563 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-26 01:30:19,564 - INFO - 
+📦 Fetching vulnerabilities starting at index 270000...
+2025-04-26 01:30:24,281 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-26 01:30:24,397 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-26 01:30:34,398 - INFO - 
+📦 Fetching vulnerabilities starting at index 272000...
+2025-04-26 01:30:40,132 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-26 01:30:40,242 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-26 01:30:50,242 - INFO - 
+📦 Fetching vulnerabilities starting at index 274000...
+2025-04-26 01:30:56,276 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-26 01:30:56,391 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-26 01:31:06,392 - INFO - 
+📦 Fetching vulnerabilities starting at index 276000...
+2025-04-26 01:31:10,346 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-26 01:31:10,467 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-26 01:31:20,468 - INFO - 
+📦 Fetching vulnerabilities starting at index 278000...
+2025-04-26 01:31:25,996 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-26 01:31:26,125 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-26 01:31:36,126 - INFO - 
+📦 Fetching vulnerabilities starting at index 280000...
+2025-04-26 01:31:46,153 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-26 01:31:46,276 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-26 01:31:56,277 - INFO - 
+📦 Fetching vulnerabilities starting at index 282000...
+2025-04-26 01:32:11,196 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-26 01:32:11,322 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-26 01:32:21,323 - INFO - 
+📦 Fetching vulnerabilities starting at index 284000...
+2025-04-26 01:32:32,977 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-26 01:32:33,090 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-26 01:32:43,091 - INFO - 
+📦 Fetching vulnerabilities starting at index 286000...
+2025-04-26 01:32:52,412 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-26 01:32:52,510 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-26 01:33:02,510 - INFO - 
+📦 Fetching vulnerabilities starting at index 288000...
+2025-04-26 01:33:23,587 - INFO - Retrieved 2000 vulnerabilities.
+2025-04-26 01:33:23,687 - INFO - ✅ Inserted 2000 vulnerabilities
+2025-04-26 01:33:33,688 - INFO - 
+📦 Fetching vulnerabilities starting at index 290000...
+2025-04-26 01:33:43,614 - INFO - Retrieved 1468 vulnerabilities.
+2025-04-26 01:33:43,676 - INFO - ✅ Inserted 1468 vulnerabilities
+2025-04-26 01:33:53,677 - INFO - 
+📦 Fetching vulnerabilities starting at index 292000...
+2025-04-26 01:33:54,199 - INFO - ✅ No more vulnerabilities to fetch.
+2025-04-26 01:33:54,199 - INFO - 
+🏁 Finished inserting all vulnerabilities. Total inserted: 31468
+2025-04-26 01:33:54,200 - INFO - 
+⏱️ Elapsed Time: 11 minutes 41 seconds
+2025-04-26 01:33:54,202 - INFO - ✅ Task Finished at 2025-04-26T05:33:54.000Z, saved to last-sync.txt
+2025-04-26 01:33:54,202 - INFO - ✅ NVD data parsed successfully.
+2025-04-26 01:33:54,202 - INFO - 🔵 Parsing MITRE ATT&CK data...
+2025-04-26 01:34:14,093 - INFO - ✅ Connection to SQLite DB successful
+2025-04-26 01:34:14,318 - INFO - ✅ Tables created successfully!
+2025-04-26 01:34:15,045 - INFO - ✅ MITRE ATT&CK data inserted successfully.
+2025-04-26 01:34:15,046 - INFO - ✅ MITRE ATT&CK data parsed successfully.
+2025-04-26 01:51:56,034 - INFO - 🔵 Parsing MITRE ATT&CK data...
+2025-04-26 01:52:03,624 - INFO - ✅ Connection to SQLite DB successful
+2025-04-26 01:52:05,986 - INFO - ✅ Tables created successfully!
+2025-04-26 01:53:03,157 - INFO - ✅ MITRE ATT&CK data inserted successfully.
+2025-04-26 01:53:03,192 - INFO - ✅ MITRE ATT&CK data parsed successfully.
+2025-04-26 01:53:57,619 - INFO - 🔵 Parsing MITRE ATT&CK data...
+2025-04-26 01:53:57,828 - INFO - ✅ Connection to SQLite DB successful
+2025-04-26 01:53:57,831 - INFO - ✅ Tables created successfully!
+2025-04-26 01:53:57,913 - INFO - ✅ MITRE ATT&CK data inserted successfully.
+2025-04-26 01:53:57,948 - INFO - ✅ MITRE ATT&CK data parsed successfully.
+2025-04-26 01:55:01,048 - INFO - 🔵 Parsing MITRE ATT&CK data...
+2025-04-26 01:55:05,643 - INFO - ✅ Connection to SQLite DB successful
+2025-04-26 01:55:05,645 - INFO - ✅ Tables created successfully!
+2025-04-26 01:55:26,462 - INFO - ✅ MITRE ATT&CK data inserted successfully.
+2025-04-26 01:55:26,499 - INFO - ✅ MITRE ATT&CK data parsed successfully.
+2025-04-26 01:56:50,261 - INFO - 🔵 Parsing MITRE ATT&CK data...
+2025-04-26 01:56:50,476 - INFO - ✅ Connection to SQLite DB successful
+2025-04-26 01:56:50,477 - INFO - ✅ Tables created successfully!
+2025-04-26 01:56:50,559 - INFO - ✅ MITRE ATT&CK data inserted successfully.
+2025-04-26 01:56:50,594 - INFO - ✅ MITRE ATT&CK data parsed successfully.
+2025-04-26 02:02:05,420 - INFO - 🔵 Parsing MITRE ATT&CK data...
+2025-04-26 02:02:08,417 - INFO - ✅ Connection to SQLite DB successful
+2025-04-26 02:02:11,242 - INFO - ✅ Tables created successfully!
+2025-04-26 02:06:52,012 - INFO - 🔵 Parsing MITRE ATT&CK data...
+2025-04-26 02:06:52,235 - INFO - ✅ Connection to SQLite DB successful
+2025-04-26 02:06:52,238 - INFO - ✅ Tables created successfully!
+2025-04-26 02:06:57,753 - ERROR - SQLite error: database is locked
+2025-04-26 02:06:57,789 - INFO - ✅ MITRE ATT&CK data parsed successfully.
+2025-04-26 02:07:23,094 - INFO - 🔵 Parsing MITRE ATT&CK data...
+2025-04-26 02:07:23,322 - INFO - ✅ Connection to SQLite DB successful
+2025-04-26 02:07:23,324 - INFO - ✅ Tables created successfully!
+2025-04-26 02:07:23,402 - INFO - ✅ MITRE ATT&CK data inserted successfully.
+2025-04-26 02:07:23,438 - INFO - ✅ MITRE ATT&CK data parsed successfully.
+2025-04-26 02:11:34,696 - INFO - 🔵 Parsing MITRE ATT&CK data...
+2025-04-26 02:11:34,916 - INFO - ✅ Connection to SQLite DB successful
+2025-04-26 02:11:35,129 - INFO - ✅ Tables created successfully!
+2025-04-26 02:11:35,204 - INFO - ✅ MITRE ATT&CK data inserted successfully.
+2025-04-26 02:11:35,239 - INFO - ✅ MITRE ATT&CK data parsed successfully.
+2025-04-26 02:20:02,587 - INFO - 🔵 Parsing MITRE ATT&CK data...
+2025-04-26 02:20:16,166 - INFO - ✅ Connection to SQLite DB successful
+2025-04-26 02:20:18,717 - INFO - ✅ Tables created successfully!
+2025-04-26 02:20:22,157 - ERROR - SQLite error: no such table: TechniqueKillChain
+2025-04-26 02:20:22,196 - INFO - ✅ MITRE ATT&CK data parsed successfully.
+2025-04-26 02:21:08,937 - INFO - 🔵 Parsing MITRE ATT&CK data...
+2025-04-26 02:21:11,847 - INFO - ✅ Connection to SQLite DB successful
+2025-04-26 02:21:11,972 - INFO - ✅ Tables created successfully!
+2025-04-26 02:30:44,209 - INFO - 🔵 Parsing MITRE ATT&CK data...
+2025-04-26 02:30:44,435 - INFO - ✅ Connection to SQLite DB successful
+2025-04-26 02:30:44,436 - INFO - ✅ Tables created successfully!
+2025-04-26 02:30:44,436 - ERROR - SQLite error: no such table: TechniqueKillChain
+2025-04-26 02:30:44,468 - INFO - ✅ MITRE ATT&CK data parsed successfully.
+2025-04-26 02:32:09,820 - INFO - 🔵 Parsing MITRE ATT&CK data...
+2025-04-26 02:32:10,035 - INFO - ✅ Connection to SQLite DB successful
+2025-04-26 02:32:10,145 - INFO - ✅ Tables created successfully!
+2025-04-26 02:32:10,147 - ERROR - SQLite error: no such table: TechniqueDataSources
+2025-04-26 02:32:10,180 - INFO - ✅ MITRE ATT&CK data parsed successfully.
+2025-04-26 02:32:58,557 - INFO - 🔵 Parsing MITRE ATT&CK data...
+2025-04-26 02:32:58,774 - INFO - ✅ Connection to SQLite DB successful
+2025-04-26 02:32:58,775 - INFO - ✅ Tables created successfully!
+2025-04-26 02:32:58,778 - ERROR - SQLite error: no such table: TechniqueDataSources
+2025-04-26 02:32:58,812 - INFO - ✅ MITRE ATT&CK data parsed successfully.
+2025-04-26 02:33:49,778 - INFO - 🔵 Parsing MITRE ATT&CK data...
+2025-04-26 02:33:49,995 - INFO - ✅ Connection to SQLite DB successful
+2025-04-26 02:33:50,008 - INFO - ✅ Tables created successfully!
+2025-04-26 02:33:50,009 - ERROR - SQLite error: table Attack_technique has no column named remoteSupport
+2025-04-26 02:33:50,043 - INFO - ✅ MITRE ATT&CK data parsed successfully.
+2025-04-26 02:34:19,429 - INFO - 🔵 Parsing MITRE ATT&CK data...
+2025-04-26 02:34:19,654 - INFO - ✅ Connection to SQLite DB successful
+2025-04-26 02:34:19,655 - INFO - ✅ Tables created successfully!
+2025-04-26 02:34:19,657 - ERROR - SQLite error: table Attack_technique has no column named remoteSupport
+2025-04-26 02:34:19,692 - INFO - ✅ MITRE ATT&CK data parsed successfully.
+2025-04-26 02:34:39,165 - INFO - 🔵 Parsing MITRE ATT&CK data...
+2025-04-26 02:34:39,379 - INFO - ✅ Connection to SQLite DB successful
+2025-04-26 02:34:39,391 - INFO - ✅ Tables created successfully!
+2025-04-26 02:34:39,392 - ERROR - SQLite error: table Attack_technique has no column named remoteSupport
+2025-04-26 02:34:39,428 - INFO - ✅ MITRE ATT&CK data parsed successfully.
+2025-04-26 02:36:07,687 - INFO - 🔵 Parsing MITRE ATT&CK data...
+2025-04-26 02:36:07,905 - INFO - ✅ Connection to SQLite DB successful
+2025-04-26 02:36:07,906 - INFO - ✅ Tables created successfully!
+2025-04-26 02:36:07,908 - ERROR - SQLite error: table Attack_technique has no column named remoteSupport
+2025-04-26 02:36:07,944 - INFO - ✅ MITRE ATT&CK data parsed successfully.
+2025-04-26 02:36:18,729 - INFO - 🔵 Parsing MITRE ATT&CK data...
+2025-04-26 02:36:18,958 - INFO - ✅ Connection to SQLite DB successful
+2025-04-26 02:36:19,067 - INFO - ✅ Tables created successfully!
+2025-04-26 02:36:19,147 - INFO - ✅ MITRE ATT&CK data inserted successfully.
+2025-04-26 02:36:19,182 - INFO - ✅ MITRE ATT&CK data parsed successfully.
+2025-04-26 02:43:17,486 - INFO - 🔵 Parsing MITRE ATT&CK data...
+2025-04-26 02:43:18,316 - INFO - ✅ Connection to SQLite DB successful
+2025-04-26 02:43:20,083 - INFO - ✅ Tables created successfully!
+2025-04-26 02:52:53,667 - INFO - 🔵 Parsing MITRE ATT&CK data...
+2025-04-26 02:52:53,882 - INFO - ✅ Connection to SQLite DB successful
+2025-04-26 02:52:54,007 - INFO - ✅ Tables created successfully!
+2025-04-26 02:52:54,009 - ERROR - Error: cannot access local variable 'remote_support' where it is not associated with a value
+2025-04-26 02:52:54,044 - INFO - ✅ MITRE ATT&CK data parsed successfully.
+2025-04-26 02:56:27,997 - INFO - 🔵 Parsing MITRE ATT&CK data...
+2025-04-26 02:56:28,225 - INFO - ✅ Connection to SQLite DB successful
+2025-04-26 02:56:28,336 - INFO - ✅ Tables created successfully!
+2025-04-26 02:56:28,337 - ERROR - Error: cannot access local variable 'remote_support' where it is not associated with a value
+2025-04-26 02:56:28,374 - INFO - ✅ MITRE ATT&CK data parsed successfully.
+2025-04-26 02:57:01,413 - INFO - 🔵 Parsing MITRE ATT&CK data...
+2025-04-26 02:57:01,634 - INFO - ✅ Connection to SQLite DB successful
+2025-04-26 02:57:01,636 - INFO - ✅ Tables created successfully!
+2025-04-26 02:57:01,714 - INFO - ✅ MITRE ATT&CK data inserted successfully.
+2025-04-26 02:57:01,750 - INFO - ✅ MITRE ATT&CK data parsed successfully.
+2025-04-26 02:57:12,789 - INFO - 🔵 Parsing MITRE ATT&CK data...
+2025-04-26 02:57:13,009 - INFO - ✅ Connection to SQLite DB successful
+2025-04-26 02:57:13,121 - INFO - ✅ Tables created successfully!
+2025-04-26 02:57:13,207 - INFO - ✅ MITRE ATT&CK data inserted successfully.
+2025-04-26 02:57:13,243 - INFO - ✅ MITRE ATT&CK data parsed successfully.
+2025-04-26 03:00:09,354 - INFO - 🔵 Parsing MITRE ATT&CK data...
+2025-04-26 03:00:09,579 - INFO - ✅ Connection to SQLite DB successful
+2025-04-26 03:00:09,691 - INFO - ✅ Tables created successfully!
+2025-04-26 03:00:09,771 - INFO - ✅ MITRE ATT&CK data inserted successfully.
+2025-04-26 03:00:09,804 - INFO - ✅ MITRE ATT&CK data parsed successfully.
+2025-04-26 03:01:22,736 - INFO - 🔵 Parsing MITRE ATT&CK data...
+2025-04-26 03:01:22,950 - INFO - ✅ Connection to SQLite DB successful
+2025-04-26 03:01:23,063 - INFO - ✅ Tables created successfully!
+2025-04-26 03:01:23,140 - INFO - ✅ MITRE ATT&CK data inserted successfully.
+2025-04-26 03:01:23,173 - INFO - ✅ MITRE ATT&CK data parsed successfully.
+2025-04-26 03:02:38,699 - INFO - 🔵 Parsing MITRE ATT&CK data...
+2025-04-26 03:02:38,921 - INFO - ✅ Connection to SQLite DB successful
+2025-04-26 03:02:39,035 - INFO - ✅ Tables created successfully!
+2025-04-26 03:02:39,114 - INFO - ✅ MITRE ATT&CK data inserted successfully.
+2025-04-26 03:02:39,151 - INFO - ✅ MITRE ATT&CK data parsed successfully.

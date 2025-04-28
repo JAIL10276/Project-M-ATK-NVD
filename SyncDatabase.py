@@ -16,7 +16,5 @@ def update_database():
 
 logging.info("⌛ Scheduler is running... Waiting for the next update...")
 
-# Schedule the update every daily
-while True:
-    schedule.run_pending()
-    schedule.every(1).day.do(update_database)
+
+update_database()

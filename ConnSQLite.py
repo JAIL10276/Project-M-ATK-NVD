@@ -8,13 +8,15 @@ def create_database():
         with sqlite3.connect("project-src/database/WHITEHAT.db") as connection:
             logging.info("✅ Connection to SQLite DB successful")
             logging.info("🔃 Creating tables...")
-            create_table(connection)
+            #create_table_nvd(connection)
+            create_table_attack(connection)
+            
             connection.commit()
             logging.info("✅ Database created successfully")
     except sqlite3.OperationalError as e:
         logging.error(f"SQLite error: {e}")
 
-def create_table(connection):
+def create_table_nvd(connection):
     cursor = connection.cursor()
     cursor.executescript('''
         -- CVE Core Table
@@ -114,11 +116,14 @@ def create_table(connection):
             source TEXT,
             FOREIGN KEY (CVE_ID) REFERENCES CVE(CVE_ID)
         );
-
-        -- Attack Technique
+    ''')
+def create_table_attack(connection):
+    cursor = connection.cursor()
+    cursor.executescript('''
+        -- Attack Technique Table
         CREATE TABLE IF NOT EXISTS Attack_technique (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
-            technique_ID TEXT,
+            technique_ID TEXT UNIQUE,
             techniqueName TEXT,
             description TEXT,
             type TEXT,
@@ -129,7 +134,7 @@ def create_table(connection):
             creationDate TIMESTAMP,
             modificationDate TIMESTAMP
         );
-        
+
         -- DomainTechniqueMapping
         CREATE TABLE IF NOT EXISTS DomainTechniqueMapping (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -139,7 +144,7 @@ def create_table(connection):
         );
 
         -- ExternalReferences
-        create table if not exists ExternalReferences (
+        CREATE TABLE IF NOT EXISTS ExternalReferences (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             CVE_ID TEXT,
             external_id TEXT,
@@ -147,7 +152,7 @@ def create_table(connection):
             source TEXT,
             url TEXT,
             description TEXT,
-            FOREIGN key (technique_ID) references Attack_technique(technique_ID),
+            FOREIGN KEY (technique_ID) REFERENCES Attack_technique(technique_ID),
             FOREIGN KEY (CVE_ID) REFERENCES CVE(CVE_ID)
         );
 
@@ -160,13 +165,6 @@ def create_table(connection):
             FOREIGN KEY (CWE_ID) REFERENCES CWE(CWE_ID)
         );
 
-        -- CWE
-        CREATE TABLE IF NOT EXISTS CWE (
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            domain TEXT,
-            CWE_ID TEXT
-        );
-
         -- TechniqueMitigationMapping
         CREATE TABLE IF NOT EXISTS TechniqueMitigationMapping (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -174,14 +172,30 @@ def create_table(connection):
             mitigation_ID TEXT,
             FOREIGN KEY (technique_ID) REFERENCES Attack_technique(technique_ID)
         );
-
-        -- CVE to CWE Mapping
-        CREATE TABLE IF NOT EXISTS CVE_CWE_Mapping (
+        CREATE TABLE IF NOT EXISTS TechniqueKillChain (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
-            CVE_ID TEXT,
-            CWE_ID TEXT,
-            FOREIGN KEY (CVE_ID) REFERENCES CVE(CVE_ID),
-            FOREIGN KEY (CWE_ID) REFERENCES CWE(CWE_ID)
+            technique_ID TEXT,
+            kill_chain_name TEXT,
+            phase_name TEXT,
+            FOREIGN KEY (technique_ID) REFERENCES Attack_technique(technique_ID)
+        );
+        CREATE TABLE IF NOT EXISTS TechniqueDataSources (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            technique_ID TEXT,
+            dataSources TEXT,
+            FOREIGN KEY (technique_ID) REFERENCES Attack_technique(technique_ID)
+        );
+        CREATE TABLE IF NOT EXISTS TechniqueDefensesBypassed (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            technique_ID TEXT,
+            defense TEXT,
+            FOREIGN KEY (technique_ID) REFERENCES Attack_technique(technique_ID)
+        );
+        CREATE TABLE IF NOT EXISTS TechniquePermissions (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            technique_ID TEXT,
+            permissions TEXT,
+            FOREIGN KEY (technique_ID) REFERENCES Attack_technique(technique_ID)
         );
         CREATE TABLE IF NOT EXISTS TechniquePlatforms (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -189,30 +203,10 @@ def create_table(connection):
             platform TEXT,
             FOREIGN KEY (technique_ID) REFERENCES Attack_technique(technique_ID)
         );
-        CREATE TABLE IF NOT EXISTS TechniquePermissions(           
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            technique_ID TEXT,
-            permissions TEXT,
-            FOREIGN KEY (technique_ID) REFERENCES Attack_technique(technique_ID)
-        );
-        CREATE TABLE IF NOT EXISTS TechniqueDataSources(          
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            technique_ID TEXT,
-            dataSources TEXT,
-            FOREIGN KEY (technique_ID) REFERENCES Attack_technique(technique_ID)
-        );
-        CREATE TABLE IF NOT EXISTS TechniqueDefensesBypassed(            
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            technique_ID TEXT,
-            defense TEXT,
-            FOREIGN KEY (technique_ID) REFERENCES Attack_technique(technique_ID)
-        );
-        CREATE TABLE IF NOT EXISTS TechniqueKillChain (            
-            id INTEGER PRIMARY KEY AUTOINCREMENT,
-            technique_ID TEXT,
-            kill_chain_name TEXT,
-            phase_name TEXT,
-            FOREIGN KEY (technique_ID) REFERENCES Attack_technique(technique_ID)
-        );
+       
+
+                 
     ''')
+
+
     logging.info("✅ Tables created successfully!")

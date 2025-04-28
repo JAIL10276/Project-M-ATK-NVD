@@ -9,8 +9,7 @@ setup_logger()
 # MITRE ATT&CK and NVD Parser
 # This script is designed to parse data from NVD and MITRE ATT&CK APIs and store it in a SQLite database.
 # It includes functions to create the database, parse data, and save the last update time.
-logging.basicConfig(filename="logs.txt",level=logging.INFO, format='%(asctime)s - %(levelname)s - %(message)s')
-logging.info("Starting the script...")
+# The script also includes error handling and logging to track the progress and any issues that arise during
 
 def create_database():
     try:
@@ -29,7 +28,7 @@ def parse_NVD_data_to_database():
 
 def parse_data_to_database():
     # 1. First parse NVD data
-    parse_NVD_data_to_database()
+    #parse_NVD_data_to_database()
 
     # 2. THEN parse MITRE ATT&CK data
     parse_MITREATTACK_data_to_database()

@@ -2,7 +2,12 @@ import logging
 
 def setup_logger():
     logging.basicConfig(
-        filename="logs.txt",
+
         level=logging.INFO,
-        format='%(asctime)s - %(levelname)s - %(message)s'
+        format='%(asctime)s - %(levelname)s - %(message)s',
+        handlers=[
+            logging.StreamHandler(),
+            logging.FileHandler("logs.txt", encoding='utf-8')
+        ]
+
     )

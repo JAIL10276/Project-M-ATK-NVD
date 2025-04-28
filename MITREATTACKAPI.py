@@ -2,9 +2,9 @@ import json
 import sqlite3
 import logging
 from logger import setup_logger
-from ConnSQLite import create_table
+import ConnSQLite
 setup_logger()
-DATABASE = "WHITEHAT.db"
+DATABASE = "project-src/database/MATK.db"
 
 def load_attack_data():
     with open("attack-stix-data/enterprise-attack/enterprise-attack.json", "r", encoding="utf-8") as file:
@@ -22,7 +22,7 @@ def insert_data_to_MITREATTACK_Tables():
         with sqlite3.connect(DATABASE) as connection:
             cursor = connection.cursor()
             logging.info("✅ Connection to SQLite DB successful")
-            create_table(connection)
+            ConnSQLite.create_table_attack(connection)
             for attack_data in attack_files:
                 for obj in attack_data["objects"]:
                     if obj.get("type") == "attack-pattern":
@@ -61,10 +61,13 @@ def insert_data_to_MITREATTACK_Tables():
                         type_ = obj.get("type")
                         isRevoked = 1 if obj.get("revoked") else 0
                         isSubtechnique = 1 if obj.get("x_mitre_is_subtechnique") else 0
-                        detection = obj.get("x_mitre_detection")
+                        
+                        detection = obj.get("x_mitre_detection", None)
+                
                         creationDate = obj.get("created")
                         modificationDate = obj.get("modified")
-                        remote_support = obj.get("x_mitre_remote_support")
+    
+                        remote_support = obj.get("x_mitre_remote_support", None)
                         # Insert into Attack_technique
                         cursor.execute('''
                             INSERT OR IGNORE INTO Attack_technique (technique_ID, techniqueName, description, type, remoteSupport, isRevoked, isSubtechnique, detection, creationDate, modificationDate)
@@ -114,12 +117,7 @@ def insert_data_to_MITREATTACK_Tables():
                                     VALUES (?, ?, ?, ?, ?)
                                 ''', (technique_id, source, url, ref_description, external_id))
 
-                            if source and source.lower() == "cwe" and external_id:
-                                cursor.execute('''
-                                    INSERT OR IGNORE INTO TechniqueCWEMapping (technique_ID, CWE_ID)
-                                    VALUES (?, ?)
-                                ''', (technique_id, external_id))
-
+                           
                     # Insert TechniqueMitigationMapping
                     if obj.get("type") == "relationship" and obj.get("relationship_type") == "mitigates":
                         cursor.execute('''
