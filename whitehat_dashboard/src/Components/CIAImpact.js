@@ -4,7 +4,7 @@ import Plot from "react-plotly.js";
 function CIAImpact(){
     const labels = ['Confidentiality', 'Integrity', 'Availability'];
     const values = [40, 20, 24];
-
+    
     return (
         <div className="Chart-Container">
             <h2>
