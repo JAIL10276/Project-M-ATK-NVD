@@ -17,7 +17,7 @@ def get_last_update(filename="last-sync.txt"):
 # Configuration
 NVDAPIURL = "https://services.nvd.nist.gov/rest/json/cves/2.0"
 DATABASE = "project-src/database/WHITEHAT.db"
-NVDAPIKEY = 'b7f081ac-7ba8-482d-9c11-80aa51c5f666'  # Replace with your actual API key
+NVDAPIKEY = ""  # Replace with your actual API key
 # Note: The API key should be kept secret and not hardcoded in production code.
 HEADERS = {"apiKey": NVDAPIKEY}
 RESULTS_PER_PAGE = 2000
